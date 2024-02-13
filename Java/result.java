@@ -18,11 +18,19 @@ class MARK extends GET
 	int mark[] = new int[5];
 	MARK()
 	{
+		get:
 		for(int i=0;i<mark.length;i++)
 		{
 			System.out.print("Enter Marks of "+sub[i]+" : ");
 			mark[i] = sc.nextInt();
+			if(mark[i]>100)
+			{
+				System.out.println("Please Enter Marks Less then 100.");
+				i=i-1;
+				continue get;
+			}
 		}
+	
 	}
 	void display()
 	{
