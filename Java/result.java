@@ -25,7 +25,7 @@ class MARK extends GET
 			mark[i] = sc.nextInt();
 			if(mark[i]>100)
 			{
-				System.out.println("Please Enter Marks Less then 100.");
+				System.out.println("Please Enter Valid Marks.");
 				i=i-1;
 				continue get;
 			}
