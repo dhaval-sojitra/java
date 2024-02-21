@@ -14,7 +14,6 @@ class first
 		year = sc.nextLine();
 		System.out.print("Enter Your "+strem+" Semester :");
 		s = sc.nextInt();
-		
 	}
 }
 class second extends first
@@ -22,20 +21,38 @@ class second extends first
 	second()
 	{
 		int sem[] = new int[s];
+		String sub[][] = new String[s][4];
+		int sub1;
 		int s1;
-		String sub[] = new String[];
 		for(int i=0;i<s;i++)
 		{
 			sem[i] = i+1;
 		}
-		System.out.println("Enter Subjects Number in sem "+(i+1)+" :");
-		s1 = sc.nextInt();
-		System.out.println(strem);
-		System.out.println(year);
+		
+		for(int i=0;i<s;i++)
+		{
+			System.out.println("Enter Subjects of sem "+(i+1)+" : " );
+			System.err.println("-----------------------------------------------");
+			// sub1 = sc.nextInt();
+			for(int a=0;a<=3;a++)
+			{
+				System.err.println("Enter Subject"+(a+1)+ "of Sem "+(i+1)+" : ");
+				sub[i][a] = sc.nextLine();
+			}
+		}
+		System.out.println("Strem : "+strem);
+		System.out.println("Acadmic Year : "+year);
 		for(int i=0;i<sem.length;i++)
 		{
-			System.out.println(sem[i]);
+			System.out.println("Semester : "+sem[i]);
+			System.err.println("-------------------------------------");
+			for(int a=0;a<=3;a++)
+			{
+				System.err.println("Subject  : "+(a+1)+sub[i][a]);
+			}
+			System.err.println("------------------------------------------");
 		}
+		
 	}
 }
 class Pr3
