@@ -186,6 +186,7 @@ class select {
                 new delete();
                 break;
             case 10:
+                System.out.println("Good bye!");
                 System.exit(0);
             default:
                 System.err.println("Please Enter Valid Choice..");
