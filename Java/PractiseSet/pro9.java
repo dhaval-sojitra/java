@@ -18,8 +18,10 @@ class get {
             "Eighteen", "Nineteen" };
     String[] lastdigit = { "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
     String[] threedigit = { "Hundred" };
+    
 
     void cal(int num) {
+        
         int temp3, i2;
         String word2 = "";
         int rev = num, x;
@@ -30,9 +32,11 @@ class get {
             rev /= 10;
         }
         temp3 = Integer.parseInt(word2);
-        if (temp3 > 19) {
-            String word3 = "";
-            int rev1 = temp3, x1;
+        int len = Integer.toString(temp3).length();
+        if(len==2){
+            if (temp3 > 19) {
+                String word3 = "";
+                int rev1 = temp3, x1;
             while (rev1 > 0) {
                 x1 = rev1 % 10;
                 String y = Integer.toString(x1);
@@ -48,11 +52,40 @@ class get {
                 i2 = temp3 % 10;
                 i2 += 2;
             }
-        } else {
+        } else{
             System.err.println(twodigit[temp3 - 10].toUpperCase());
         }
     }
+    else{
+        System.err.println(onedigit[temp3].toUpperCase());
 
+    }
+    }
+    void twonumber(int no){
+        int temp = no, i;
+        String word = "";
+        if (temp > 19) {
+            int rev = no, x;
+            while (rev > 0) {
+                x = rev % 10;
+                String y = Integer.toString(x);
+                word += y;
+                rev /= 10;
+            }
+            temp = Integer.parseInt(word);
+            i = temp % 10;
+            System.err.print(no + " : ");
+            while (temp > 0) {
+                System.err.print(lastdigit[i - 2].toUpperCase()+" ");
+                temp /= 10;
+                lastdigit = onedigit;
+                i = temp % 10;
+                i += 2;
+            }
+        } else {
+            System.err.println(no + " : " + twodigit[no - 10].toUpperCase());
+        }
+    }
     get() {
         System.err.print("Enter Any Number :");
         int no = sc.nextInt();
@@ -60,29 +93,7 @@ class get {
         if (len >= 4)
             System.err.println("Please enter number lessthan 1000");
         else if (len == 2) {
-            int temp = no, i;
-            String word = "";
-            if (temp > 19) {
-                int rev = no, x;
-                while (rev > 0) {
-                    x = rev % 10;
-                    String y = Integer.toString(x);
-                    word += y;
-                    rev /= 10;
-                }
-                temp = Integer.parseInt(word);
-                i = temp % 10;
-                System.err.print(no + " : ");
-                while (temp > 0) {
-                    System.err.print(lastdigit[i - 2].toUpperCase()+" ");
-                    temp /= 10;
-                    lastdigit = onedigit;
-                    i = temp % 10;
-                    i += 2;
-                }
-            } else {
-                System.err.println(no + " : " + twodigit[no - 10].toUpperCase());
-            }
+            twonumber(no);
         } else if (len == 3) {
             int temp1 = no, i1;
             String word1 = "";
@@ -95,7 +106,7 @@ class get {
             temp1 = Integer.parseInt(word1);
             while (temp1 > 0) {
                 i1 = temp1 % 10;
-                String d = onedigit[i1] +" " + threedigit[0] + " And ";
+                String d = onedigit[i1] +" " + threedigit[0] + " ";
                 System.err.print(d.toUpperCase());
                 temp1 /= 10;
                 int len1 = Integer.toString(temp1).length();
