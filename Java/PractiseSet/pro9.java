@@ -20,19 +20,36 @@ class get {
     String[] threedigit = { "Hundred" };
 
     void cal(int num) {
-        if (num < 19) {
-            System.err.println(twodigit[1]);
-        } else {
-            int temp3 = num, i2;
-            System.err.println(num);
-            i2 = temp3 % 10;
-            while (temp3 > 0) {
-                System.err.print(lastdigit[i2 - 2].toUpperCase());
-                temp3 /= 10;
+        int temp3, i2;
+        String word2 = "";
+        int rev = num, x;
+        while (rev > 0) {
+            x = rev % 10;
+            String y = Integer.toString(x);
+            word2 += y;
+            rev /= 10;
+        }
+        temp3 = Integer.parseInt(word2);
+        if (temp3 > 19) {
+            String word3 = "";
+            int rev1 = temp3, x1;
+            while (rev1 > 0) {
+                x1 = rev1 % 10;
+                String y = Integer.toString(x1);
+                word3 += y;
+                rev1 /= 10;
+            }
+            int temp4 = Integer.parseInt(word3);
+            i2 = temp4 % 10;
+            while (temp4 > 0) {
+                System.err.print(lastdigit[i2 - 2].toUpperCase()+" ");
+                temp4 /= 10;
                 lastdigit = onedigit;
                 i2 = temp3 % 10;
                 i2 += 2;
             }
+        } else {
+            System.err.println(twodigit[temp3 - 10].toUpperCase());
         }
     }
 
@@ -57,14 +74,14 @@ class get {
                 i = temp % 10;
                 System.err.print(no + " : ");
                 while (temp > 0) {
-                    System.err.print(lastdigit[i - 2].toUpperCase());
+                    System.err.print(lastdigit[i - 2].toUpperCase()+" ");
                     temp /= 10;
                     lastdigit = onedigit;
                     i = temp % 10;
                     i += 2;
                 }
             } else {
-                System.err.println(no + " : " + twodigit[no - 10]);
+                System.err.println(no + " : " + twodigit[no - 10].toUpperCase());
             }
         } else if (len == 3) {
             int temp1 = no, i1;
@@ -75,13 +92,11 @@ class get {
                 word1 += x;
                 temp1 /= 10;
             }
-            // 216
-            // 612
             temp1 = Integer.parseInt(word1);
             while (temp1 > 0) {
                 i1 = temp1 % 10;
-                String d = onedigit[i1] + threedigit[0];
-                System.err.print(d);
+                String d = onedigit[i1] +" " + threedigit[0] + " And ";
+                System.err.print(d.toUpperCase());
                 temp1 /= 10;
                 int len1 = Integer.toString(temp1).length();
                 if (len1 == 2) {
@@ -91,7 +106,7 @@ class get {
             }
 
         } else {
-            System.err.println(no + " : " + onedigit[no]);
+            System.err.println(no + " : " + onedigit[no].toUpperCase());
         }
 
     }
