@@ -40,9 +40,37 @@ class convert{
         while(temp1>0)
         {
             i = temp1%10;
-            System.err.print(words[i] + " ");
+            System.err.print(words[i].toUpperCase() + " ");
             temp1 /= 10;
         }
+        System.err.println("\n---------DENOMINATION:---------");
+        int x,temp2=num;
+            i = temp2/1000;
+            System.err.println("1000 x "+i+ " = " + i*1000);
+            temp2 = temp2-i*1000;
+            i = temp2/500;
+            System.err.println("500 X "+i+ " = " + i*500);
+            temp2 = temp2-i*500;
+            i = temp2/100;
+            System.err.println("100 X "+i+ " = "+i*100);
+            temp2 = temp2-i*100;
+            i = temp2/50;
+            System.err.println("50 X "+i+ " = "+i*50);
+            temp2 = temp2-i*50;
+            i = temp2/20;
+            System.err.println("20 X "+i+ " = "+i*20);
+            temp2 = temp2-i*20;
+            i = temp2/10;
+            System.err.println("10 X "+i+ " = "+i*10);
+            temp2 = temp2-i*10;
+            i = temp2/5;
+            System.err.println("5 X "+i+ " = "+i*5);
+            temp2 = temp2-i*5;
+            i = temp2/2;
+            System.err.println("2 X "+i+ " = "+i*2);
+            temp2 = temp2-i*2;
+            i = temp2/1;
+            System.err.println("1 X "+i+ " = "+i*1);
         
     }
 }
