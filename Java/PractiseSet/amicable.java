@@ -36,7 +36,7 @@ class chk{
     }
 }
 
-class pro1{
+public class amicable{
     public static void main(String[] args) {
         chk c = new chk();
     }

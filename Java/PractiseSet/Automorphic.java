@@ -19,7 +19,7 @@ class chk{
 
     }
 }
-class pro2{
+public class Automorphic{
     public static void main(String[] args) {
         chk k = new chk();
     }

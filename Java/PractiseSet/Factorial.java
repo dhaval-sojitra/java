@@ -6,7 +6,7 @@ class chk{
     chk(){
         System.err.print("Enter Any Number :");
         int num = sc.nextInt();
-        int temp=num,tot=1;
+        int temp=num,tot=1,fact=0;
         while(temp>=1)
         {   
             tot = temp*tot;
@@ -16,7 +16,7 @@ class chk{
         System.err.println("Factorial of "+num+" : "+tot);
     }
 }
-public class pro3 {
+public class Factorial {
     public static void main(String[] args) {
         chk k = new chk();
     }    

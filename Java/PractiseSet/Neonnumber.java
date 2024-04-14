@@ -22,7 +22,7 @@ class chk{
 
     }
 }
-public class pro5 {
+public class Neonnumber {
     public static void main(String[] args) {
         chk c = new chk();
     }

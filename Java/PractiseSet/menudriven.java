@@ -124,7 +124,7 @@ class select extends sc{
         }
     }
 }
-class pro11 {
+public class menudriven {
     public static void main(String[] args) {
         while (true) {            
             menu m = new menu();

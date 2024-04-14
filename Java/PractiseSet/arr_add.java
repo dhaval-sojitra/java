@@ -56,7 +56,7 @@ class get{
         
     }
 }
-public class pro12 {
+public class arr_add {
     public static void main(String[] args) {
         get g = new get();
     }

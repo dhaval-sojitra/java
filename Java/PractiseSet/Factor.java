@@ -13,7 +13,7 @@ class get{
         }
     }
 }
-public class pro4 {
+public class Factor {
     public static void main(String[] args) {
         get g = new get();
     }

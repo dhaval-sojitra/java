@@ -123,7 +123,7 @@ class get {
     }
 }
 
-public class pro9 {
+public class digittoword {
     public static void main(String[] args) {
         get g = new get();
     }

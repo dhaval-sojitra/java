@@ -21,8 +21,8 @@ class chk{
             }
         }
     }
-}
-class pro8{
+}  
+public class Duck{
     public static void main(String[] args) {
       chk c = new chk();  
     }

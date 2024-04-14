@@ -74,7 +74,7 @@ class convert{
         
     }
 }
-class pro10{
+public class Dimention{
     public static void main(String[] args) {
         convert c = new convert();
     }

@@ -14,7 +14,7 @@ class chk{
 
     }
 }
-public class pro7 {
+public class Buzz {
     public static void main(String[] args) {
         chk c =new chk();
     }
