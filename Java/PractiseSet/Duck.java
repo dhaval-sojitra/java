@@ -7,7 +7,7 @@ class chk{
         System.err.print("Enter Any Number :");
         int num = sc.nextInt();
         int i,temp=num;
-        while(num>0)
+        while(temp>0)
         {
             i = temp%10;
             if(i==0){
