@@ -1,13 +1,6 @@
 import java.sql.*;
 import java.util.*;
 
-class scanner {
-    Scanner sc = new Scanner(System.in);
-
-    scanner() {
-    }
-}
-
 class menu {
     menu() {
         System.err.println("\t\t\t\t\t\t\t---------------------MENU---------------------");
@@ -21,7 +14,6 @@ class menu {
         System.err.println("\t\t\t\t\t\t\t-----------------------------------------------");
     }
 }
-
 class getcon {
     String path = "jdbc:mysql://localhost:3306/dhaval";
     String uname = "root";
@@ -122,7 +114,26 @@ class showdata extends getcon {
         }
     }
 }
-
+class updatedata extends getcon{
+    updatedata(){
+        try{
+                Connection con = DriverManager.getConnection(path, uname, password);
+                 String updatequery = "update student set name = 'Rahul' Where id = 1";
+              Statement st = con.createStatement();
+             st.executeUpdate(updatequery);
+                System.err.println("******************************************");
+                System.err.println("Record Updated Successfully...");
+                System.err.println("******************************************");
+        }
+        catch(SQLException e)
+        {
+            System.err.println("******************************************");
+            System.err.println("Record Not Updated...");
+            System.err.println("******************************************");
+            e.printStackTrace();
+        }
+    }
+}
 class select extends scanner {
     select() {
         System.err.print("Enter Your Choice From Above Menu :");
@@ -139,6 +150,9 @@ class select extends scanner {
                 break;
             case 4:
                 new showdata();
+                break;
+            case 5:
+                new updatedata();
                 break;
             case 7:
                 System.err.println("******************************************");
