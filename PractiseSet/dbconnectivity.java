@@ -2,12 +2,25 @@ import java.sql.*;
 import java.util.*;
 
 class vars {
-    String path = "jdbc:mysql://localhost:3306/dhaval";
-    String user = "root";
-    String password = "";
+    String path;
+    String user;
+    String password;
+    Connection con;
     Scanner sc = new Scanner(System.in);
-
     vars() {
+        path = "jdbc:mysql://localhost:3306/dhaval";
+        user = "root";
+        password = "";
+        try{
+            con = DriverManager.getConnection(path, user, password);
+        }
+        catch (SQLException e) {
+            System.err.println("**********************************************");
+            System.err.println("Error in connecting to the database.");
+            System.err.println("**********************************************");
+            e.printStackTrace();
+        }
+        
     }
 }
 
@@ -51,7 +64,6 @@ class chekccon extends vars {
 class createtable extends vars {
     createtable() {
         try {
-            Connection con = DriverManager.getConnection(path, user, password);
             String createquery = "create table student(id int(3) primary key auto_increment,name varchar(255),city varchar(50),phone int(12))";
             Statement st = con.createStatement();
             st.executeUpdate(createquery);
@@ -71,7 +83,6 @@ class insertdata extends vars{
     insertdata()
     {
         try{
-            Connection con = DriverManager.getConnection(path, user, password);
             System.err.print("Enter Name :");
             String name = sc.nextLine();
             System.err.print("Enter City :");
@@ -99,7 +110,6 @@ class updatedata extends vars{
     updatedata()
     {
         try{
-            Connection con = DriverManager.getConnection(path, user, password);
             String updatequery = "update student set city='rajkot' where name = 'dhaval'";
             Statement st = con.createStatement();
             st.executeUpdate(updatequery);
@@ -120,7 +130,6 @@ class deletedata extends vars{
     deletedata()
     {
         try{
-            Connection con = DriverManager.getConnection(path, user, password);
             System.err.print("Which record you want to delete enter it's id :");
             int id = sc.nextInt();
             String  deletequery = "delete from student where id = "+ id +"";
@@ -144,7 +153,6 @@ class showdata extends vars{
     showdata()
     {
         try{
-            Connection con = DriverManager.getConnection(path, user, password);
             String  selectquery = "select * from student";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(selectquery);
