@@ -6,26 +6,17 @@
 // 5 5 5 5 5
 public class Twelve {
     public static void main(String[] args) {
-        int a = 1;
-        boolean x=false;
-        for(int i=5;i>=1;i--)
-        {
-            int d=1;
-            for(int j=1;j<=9;j++)
-            {
-                
-                if(j==i || x==true)
-                {
-                    System.err.print(a);
+        int rows = 5;
 
-                }
-                else
-                {
-                    System.err.print(" ");
-                }
+        for (int i = 1; i <= rows; i++) {
+            for (int j = rows - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print(i + " ");
             }
             System.out.println();
-            a += 1;
         }
     }
 }
+
